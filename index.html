@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <title>Document</title>
+</head>
+<body>
+   
+    <div class="container mx-auto">
+        <h2 class="text-4xl font-bold my-4">Phone Hunting</h2>
+        <div id="loading-spinner" class="text-center hidden">
+            <h2 class="loading loading-spinner loading-md ">loading</h2>
+        </div>
+        <!-- Phone Search Form -->
+        <div action="" class="flex justify-center my-4">
+            <input type="text" id="phoneInput" class=" border rounded-md mr-4 p-2" placeholder="Enter your mobile">
+            <button type="submit" id="search-btn" class="btn btn-primary">Search</button>
+        </div>
+        <div id="card-container" class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 ">  
+        </div>
+        <!-- show all button -->
+        <div class="text-center my-4 hidden" id="show-all-container">
+            <button onclick="handleShowAll()" class="btn btn-accent">Show All</button>
+        </div>
+                <!-- Open the modal using ID.showModal() method -->
+        <dialog id="phonedetails" class="modal">
+        <div class="modal-box">
+            <div class="card bg-base-100 ">
+               <div id="show-detail-figure">
+               </div>
+                <div class="card-body  ">
+                  <h2 id="phoneName" class="card-title"></h2>
+                  <ul>
+                    <li class="flex gap-2"><strong>Release Date:</strong><p id="releaseDate"></p> </li>
+                    <li class="flex gap-2" ><strong>Storage:</strong> <p id="Storage"></p> </li>
+                    <li class="flex gap-2" ><strong>Display Size:</strong> <p id="dSize"></p> </li>
+                    <li class="flex gap-2" ><strong>Memory:</strong> <p id="Memory"></p> </li>
+                    <li class="flex gap-2" ><strong>Brand:</strong> <p id="Brand"></p> </li>
+                    <li class="flex gap-2" ><strong>GPS:</strong> <p id="GPS"></p> </li>
+                  </ul>
+                </div>
+                <div class="card-footer text-right">
+                  <button class="btn btn-secondary" onclick="phonedetails.close()">Close</button>
+              </div>
+        </div>
+        </dialog>
+    </div>
+</body>
+    <script src="./js/phone.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</html>
